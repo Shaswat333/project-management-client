@@ -3,6 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../api";
 import { toast } from "react-toastify";
 import { UserContext } from "../context/user.context";
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -52,10 +56,11 @@ function Login() {
           onChange={handlePaswordChange}
         />
 
-        <button type="submit">Login</button>
+        <Button type="submit" color="danger">Login</Button>
       </form>
       <p>Don't have an account?</p>
       <Link to="/signup">Signup</Link>
+      
     </>
   );
 }

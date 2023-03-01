@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllProjects } from "../api";
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ListProjects() {
   const [projects, setProjects] = useState([]);
@@ -13,16 +15,19 @@ function ListProjects() {
     handleGetAllProjects();
   }, []);
 
+  if (!projects) return <>Loading...</>
+
 
   return (
     <div>
-      <h2>ASTOREZ</h2>
+      <h1>STORES</h1>
+
       <ul>
         {projects.map((project) => {
           return (
             <li key={project._id}>
               <Link to={`/projects/${project._id}`}>
-                <h3>{project.title}</h3>
+                 <h3>{project.type}</h3> 
               </Link>
               {project.imageUrl && (
                 <img

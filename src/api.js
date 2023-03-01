@@ -18,6 +18,11 @@ export const createProject = (project) => {
     headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
   });
 };
+export const editProject = (project,_projectId) => {
+  return axios.edit(`${BASE_URL}/project/projectId`, project, {
+    headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
+  });
+};
 
 export const uploadImage = (uploadData) => {
   return axios.post(`${BASE_URL}/upload`, uploadData);

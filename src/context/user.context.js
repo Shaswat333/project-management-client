@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { verify } from "../api";
+import React from "react";
 
 const UserContext = createContext();
 
@@ -13,6 +14,7 @@ function UserProviderWrapper({ children }) {
       try {
         const response = await verify(storedToken);
         setLoggedUser(response.data);
+        console.log(response.data);
       } catch (e) {
         setLoggedUser(null);
       }

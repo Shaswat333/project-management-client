@@ -1,17 +1,22 @@
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../context/user.context";
-import { useContext } from "react";
+import React, { useContext } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar() {
-
+  
   const { loggedUser, logout } = useContext(UserContext);
+  console.log(loggedUser);
   return (
    
+    
     <nav>
       <div>
+      
         {loggedUser ? (
-          <div>
-            <p>Welcome {loggedUser.email}</p>
+          <div>     
+            
+            <p>`Welcome {loggedUser.username}`</p>       
             <button onClick={logout}>Logout</button>
           </div>
         ) : (
@@ -26,19 +31,27 @@ function Navbar() {
         )}
       </div>
       <div>
-        <NavLink to="/">Projects</NavLink>
+        <NavLink to="/">Stores</NavLink>
       </div>
+      
       {loggedUser && (
         <div>
-          <NavLink to="/projects/add">Add Project</NavLink>
+          <NavLink to="/projects/add">Add Stores</NavLink>
+
         </div>
       )}
     </nav>
-
-
-  
-
   );
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
