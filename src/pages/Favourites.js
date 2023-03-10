@@ -4,10 +4,11 @@ import { getAllProjects } from "../api";
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function ListProjects() {
-  const [projects, setProjects] = useState([]);
+function Favourites() {
+    const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
+
+useEffect(() => {
     async function handleGetAllProjects() {
       const response = await getAllProjects();
       setProjects(response.data);
@@ -17,12 +18,9 @@ function ListProjects() {
 
   if (!projects) return <>Loading...</>
 
-
   return (
     <div>
-      <h1>STORES</h1>
-
-      <ul>
+        <ul>
         {projects.map((project) => {
           return (
             <li key={project._id}>
@@ -43,5 +41,4 @@ function ListProjects() {
     </div>
   );
 }
-
-export default ListProjects;
+export default Favourites;

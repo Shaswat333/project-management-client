@@ -4,8 +4,8 @@ import { login } from "../api";
 import { toast } from "react-toastify";
 import { UserContext } from "../context/user.context";
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'reactstrap';
+import {Button} from "react-bootstrap";
+
 
 
 function Login() {

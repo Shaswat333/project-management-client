@@ -21,7 +21,7 @@ function ProjectDetail() {
 
   async function handleDeleteProject() {
     await deleteProject(projectId);
-    navigate("/");
+    navigate("/projects");
   }
   return project ? (
     <>

@@ -4,7 +4,7 @@ import { createProject, uploadImage } from "../api";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Button = styled.button`
   background: transparent;
@@ -66,7 +66,7 @@ function AddProject() {
 
     toast.success("Project created!");
 
-    navigate("/");
+    navigate("/projects");
   }
 
   return (
