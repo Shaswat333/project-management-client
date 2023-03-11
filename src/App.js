@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import AddProject from "./pages/AddProject";
 import ProjectDetail from "./pages/ProjectDetail";
-import ProjectEdit from "./pages/ProjectEdit";
 import LandingPage from "./pages/LandingPage";
 import Favourites from "./pages/Favourites";
 import "react-toastify/dist/ReactToastify.css";
@@ -47,14 +46,6 @@ function App() {
         />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route
-         path="/projects/:projectId"
-          element={
-            <IsPrivate>
-            <ProjectEdit />
-            </IsPrivate>
-          }
-           />
         <Route
          path="/projects/favourites"
           element={

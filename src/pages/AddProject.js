@@ -4,6 +4,7 @@ import { createProject, uploadImage } from "../api";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import React from "react";
+import {FormGroup} from "reactstrap";
 
 
 const Button = styled.button`
@@ -71,6 +72,7 @@ function AddProject() {
 
   return (
     <form onSubmit={handleSubmitForm}>
+      <FormGroup>
       <label htmlFor="type">Type</label>
       <input
         id="type"
@@ -78,6 +80,8 @@ function AddProject() {
         value={type}
         onChange={handleTypeChange}
       />
+      </FormGroup>
+      <FormGroup>
       <label htmlFor="contact">Contact</label>
       <input
         id="contact"
@@ -85,6 +89,8 @@ function AddProject() {
         value={contact}
         onChange={handleContactChange}
       />
+      </FormGroup>
+      <FormGroup>
       <label htmlFor="location">Location</label>
       <input
         id="location"
@@ -92,6 +98,8 @@ function AddProject() {
         value={location}
         onChange={handleLocationChange}
       />
+      </FormGroup>
+      <FormGroup>
       <label htmlFor="description">Description</label>
       <input
         id="description"
@@ -99,8 +107,12 @@ function AddProject() {
         value={description}
         onChange={handleDescriptionChange}
       />
-      <label htmlFor="image">Image</label>
-      <input id="image" type="file" onChange={handleImageSelect} />
+      </FormGroup>
+      <FormGroup>
+      <label htmlFor="image">Images
+      <input id="image" type="file" onChange={handleImageSelect}/>
+      </label>
+      </FormGroup>
       <Button className="button" type="submit">
         CreateStore
       </Button>

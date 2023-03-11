@@ -6,45 +6,55 @@ import {
   CarouselIndicators,
   CarouselCaption,
 } from 'reactstrap';
+import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const items = [
   {
-    src:'https://avatars.githubusercontent.com/u/54281267?s=280&v=4',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
+    src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRccPGss0Raqbzl_wX2ZsQxad9z6K6iVdqz5Y6IkGvFwqVGShbguiMhZ7c7y8u13yJIcgI&usqp=CAU',
+    altText: 'Lisbon',
     key: 1,
-    width:25,
-    height:40,
+    
+    
   },
   {
-    src:'https://foodtank.com/wp-content/uploads/2021/09/gemma-stpjHJGqZyw-unsplash.jpg',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
+    src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5gp6xVhVsm3PYvrQrtGS78UIEmvyHXyOxtg&usqp=CAU',
+    width:100,
     key: 2,
-    width:30,
     height:40
   },
 
   {
-    src: 'https://picsum.photos/id/678/1200/400',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
+    src: 'https://miro.medium.com/max/974/1*T2yzTOm-DOluw-aQ8O5pPg.png',
+
     key: 3,
     width:30,
     height:40,
   },
   {
-    src: 'https://picsum.photos/id/456/1200/400',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQiIIwqwl1ccflgY-o6BtPw2r7GnfIJS1Gng&usqp=CAU',
+  
+    key: 3,
+    width:30,
+    height:40,
+  },
+  {
+    src: 'https://www.aeroportoportosanto.pt/sites/default/files/media/ea3.png',
+
+    key: 3,
+    width:30,
+    height:40,
+  },
+  {
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu_SwZMf_8i4tYyONovZVptMlGhs9c1jRIN42MrqK4rDcea-5tSBTi3rQzItXbhP03s_k&usqp=CAU',
+  
     key: 4,
     width:50,
     height:60,
   },
   {
-    src: 'https://picsum.photos/id/678/1200/400',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
+    src: 'https://images.unsplash.com/photo-1613757668274-4275abb83673?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZnJ1aXQlMjBzdG9yZXxlbnwwfHwwfHw%3D&w=1000&q=80',
+   
     key: 5,
     width:50,
     height:60,
@@ -88,7 +98,8 @@ function LandingPage(args) {
     );
   });
   return (
-    
+    <>
+    <p>Welcome to Astorz you can connect to diffrent store in different places.</p>
     <Carousel
       activeIndex={activeIndex}
       next={next}
@@ -112,7 +123,13 @@ function LandingPage(args) {
         onClickHandler={next}
       />
     </Carousel>
+    <div>
+    <Button >
+     <Link to="/singup">Get Started</Link>
+    </Button>
+    </div>
     
+    </>
     
 );
 }

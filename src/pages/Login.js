@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { UserContext } from "../context/user.context";
 import React from "react";
 import {Button} from "react-bootstrap";
+import {FormGroup} from "react-bootstrap";
 
 
 
@@ -41,6 +42,7 @@ function Login() {
     <>
       <h3>Login</h3>
       <form onSubmit={handleSubmitForm}>
+        <FormGroup>
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -48,6 +50,8 @@ function Login() {
           value={email}
           onChange={handleEmailChange}
         />
+        </FormGroup>
+        <FormGroup>
         <label htmlFor="password">Password</label>
         <input
           id="password"
@@ -55,9 +59,9 @@ function Login() {
           type="password"
           onChange={handlePaswordChange}
         />
-
+        </FormGroup>
         <Button type="submit" color="danger">Login</Button>
-      </form>
+        </form>
       <p>Don't have an account?</p>
       <Link to="/signup">Signup</Link>
       

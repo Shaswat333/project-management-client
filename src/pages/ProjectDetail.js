@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { deleteProject, getProject } from "../api";
 import React from "react";
+import { Card,CardBody,CardTitle,CardSubtitle,CardText } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
  
@@ -25,18 +26,43 @@ function ProjectDetail() {
   }
   return project ? (
     <>
-      <h3>{project.type}</h3>
-      <p>{project.description}</p>
-      <p>{project.contact}</p>
-      <p>{project.location}</p>
-      <div>
-        <button onClick={handleDeleteProject}>Delete</button>
-      </div>
-      
-      {project.imageUrl && (
-        <img width="60%" src={project.imageUrl} alt="project" />
-      )}
-      <button onClick={() => navigate(`/project/${projectId}`)} >Edit</button>
+    <Card
+              color="info"
+              inverse
+              style={{
+                width: '30rem',
+              }}
+            >                  
+                {project.imageUrl && (
+                  <img width="100%" src={project.imageUrl} alt="project" />
+                )}
+
+              <CardBody>
+                <CardTitle tag="h5">
+                
+                 <h3>{project.type}</h3> 
+                
+                </CardTitle>
+              <CardSubtitle
+                className="mb-2 text-muted"
+                tag="h6"
+              >
+               <h2>{project.location}</h2> 
+              </CardSubtitle>
+              <CardSubtitle
+                className="mb-2 text-muted"
+                tag="h6"
+              >
+               <h2>{project.contact}</h2> 
+              </CardSubtitle>
+              <CardText>
+              <h3>{project.description}</h3> 
+              </CardText>
+              <div>
+                 <button onClick={handleDeleteProject}>Delete</button>
+              </div>
+              </CardBody>
+              </Card>
     </>
   ) : (
     <p>Loading...</p>
